@@ -10,9 +10,11 @@ def studentsView(req):
     # return JsonResponse(students,safe=False)
 
     #return Student model
-    students = Student.object.all()
+    students = Student.objects.all()
+    ## Manual serializations
+    students_list = list(students.values())
     print(students)
-    return JsonResponse(students,safe=False)
+    return JsonResponse(students_list,safe=False)
     
 
 
