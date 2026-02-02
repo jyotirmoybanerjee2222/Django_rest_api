@@ -28,6 +28,7 @@ def studentsView(request):
         student = Student.objects.all()
         serializer = StudentSerializer(student,many = True)
         return Response(serializer.data,status=status.HTTP_200_OK)
+    #Storing Data using Serializations
     elif request.method == 'POST':
         serializer=StudentSerializer(data=request.data)
         if serializer.is_valid():
