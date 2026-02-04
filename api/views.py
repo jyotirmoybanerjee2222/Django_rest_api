@@ -38,9 +38,9 @@ def studentsView(request):
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
     
 @api_view(['GET','PUT','DELETE'])
-def studentDeatailView(request,pk):
+def studentDetailView(request,pk):
     try:
-        student = Student.objects.get(pk=pk)#get a singlee object Primary Key Based Operations 
+        student = Student.objects.get(pk=pk)#get a single object Primary Key Based Operations 
     except Student.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
     
